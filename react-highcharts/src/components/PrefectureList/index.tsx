@@ -2,7 +2,7 @@ import React from "react";
 import styles from './style.module.scss';
 type Props = {
   prefectures:{
-    prefNum: number;
+    prefCode: number;
     prefName: string;
   }[];
 
@@ -21,15 +21,15 @@ const PrefectureList: React.FC<Props> = ({ prefectures, onChange }) => {
               onChange={(event) =>
                 onChange(
                   prefecture.prefName,
-                  prefecture.prefNum,
+                  prefecture.prefCode,
                   event.target.checked
                 )
               }
-              id={"checkbox" + prefecture.prefNum}
+              id={"checkbox" + prefecture.prefCode}
             />
             <label
               className={styles.text}
-              htmlFor={"checkbox" + prefecture.prefNum}
+              htmlFor={"checkbox" + prefecture.prefCode}
             >
               {prefecture.prefName.length === 3
                 ? " " + prefecture.prefName
