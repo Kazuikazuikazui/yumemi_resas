@@ -1,6 +1,6 @@
 import React from "react";
-import PrefectureList from "./PrefectureList";
-import Graph from "./Graph";
+import PrefectureList from "../components/PrefectureList";
+import Graph from "../components/Graph";
 
 const Main: React.FC = () => {
   return (
