@@ -9,7 +9,7 @@ const Main: React.FC = () => {
   const [prefectures, setPrefectures] = useState<{
     message: null;
     result: {
-      prefNum: number;
+      prefCode: number;
       prefName: string;
     }[];
   } | null>(null);
@@ -23,7 +23,7 @@ const Main: React.FC = () => {
     // 都道府県の一覧を取得
     axios
       .get("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
-        headers: { "X-API-KEY": process.env.REACT_APP_API_KEY as string},
+        headers: { "X-API-KEY": process.env.REACT_APP_API_KEY},
       })
       .then((results) => {
         setPrefectures(results.data);
@@ -34,37 +34,41 @@ const Main: React.FC = () => {
   // 都道府県を選択した時の処理
   const handleClick = (
     prefName: string,
-    prefNum: number,
+    prefCode: number,
     click: boolean
   ) => {
     let click_prefPop = prefPopulation.slice();
 
     // 選択した時
     if (click) {
-      if (
-        click_prefPop.findIndex((value) => value.prefName === prefName) !== -1
-      )
+      if (click_prefPop.findIndex((value) => value.prefName === prefName) !== -1){
+        console.log("失敗");
         return;
-
-      axios
+      }
+      else{
+        console.log("成功");
+        console.log(prefCode);
+        axios
         .get(
-          "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefNum=" +
-            String(prefNum),
+          "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=" + String(prefCode),
           {
-            headers: { "X-API-KEY": process.env.REACT_APP_API_KEY as string},
+            headers: { "X-API-KEY": process.env.REACT_APP_API_KEY}
           }
         )
         .then((results) => {
+          console.log("resultsに入れる");
+          console.log(results.data.result.data[0].data);
           click_prefPop.push({
             prefName: prefName,
-            data: results.data.result.data[0].data,
+            data: results.data.result.data[0].data
           });
-
+          
           setPrefPopulation(click_prefPop);
         })
         .catch((error) => {
           return;
         });
+      }
     }
     // 選択を外した時
     else {
@@ -95,7 +99,7 @@ const Main: React.FC = () => {
         prefectures={prefectures.result}
         onChange={handleClick}
         />
-        <Graph />
+        <Graph populationgraph={prefPopulation} />
       </main>
     </>
     
