@@ -2,9 +2,8 @@
 作業ディレクトリは./react-highcharts
 作業ディレクトリから以下コマンドで実行
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# project setup
+### `npm install`
 
 ## Available Scripts
 

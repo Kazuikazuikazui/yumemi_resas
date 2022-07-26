@@ -56,7 +56,6 @@ const Main: React.FC = () => {
           }
         )
         .then((results) => {
-          console.log("resultsに入れる");
           console.log(results.data.result.data[0].data);
           click_prefPop.push({
             prefName: prefName,
