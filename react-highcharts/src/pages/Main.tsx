@@ -95,10 +95,12 @@ const Main: React.FC = () => {
       </Helmet>
       <main>
         <h2>メイン</h2>
-        <PrefectureList 
-        prefectures={prefectures.result}
-        onChange={handleClick}
-        />
+        {prefectures && (
+          <PrefectureList 
+            prefectures={prefectures.result}
+            onChange={handleClick}
+          />
+        )}
         <Graph populationgraph={prefPopulation} />
       </main>
     </>
