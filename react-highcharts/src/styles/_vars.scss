@@ -1,17 +1,18 @@
 // Font
-@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=DotGothic16&family=M+PLUS+1+Code&display=swap);
 
-$ff: 'ヒラギノ明朝 ProN', '游明朝体', '游明朝', 'Yu Mincho', yumincho,
-  'Noto Serif JP', sans-serif;
+$ff: 'M PLUS 1 Code', sans-serif;
 
 // Color
-$primary: #000;
-$base: #333;
+$primary: #333;
+$base: #fafafa;
+$black: #333;
 $white: #fafafa;
 $primary-shadow: rgba(#000, 0.2);
 $accent: #7CB5EB;
 
 // text
-$text-default: #fafafa;
+$text-default: #333;
 $text-black: #333;
+$text-white: #fafafa;
 $text-shadow: rgba(#000, 0.7);

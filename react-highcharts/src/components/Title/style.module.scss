@@ -7,6 +7,11 @@
   border-bottom: 2px solid $accent;
   font-weight: bold;
   padding-bottom: 5px;
+  @include dark{
+    @include dark{
+      color: $text-white;
+    }
+  }
   @include sp{
     font-size: 16px;
   }
