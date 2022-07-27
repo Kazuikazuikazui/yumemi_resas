@@ -22,7 +22,8 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
       data.push(pd.value);
       categories.push(String(pd.year));
     }
-
+    
+    console.log(p.prefName);
     series.push({
       type: "line",
       name: p.prefName,
