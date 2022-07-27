@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import Layout from '../components/Layout';
 import PrefectureList from "../components/PrefectureList";
 import Graph from "../components/Graph";
 import axios from "axios";
+
 
 const Main: React.FC = () => {
   
@@ -92,8 +94,7 @@ const Main: React.FC = () => {
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"></meta>
 
       </Helmet>
-      <main>
-        <h2>メイン</h2>
+      <Layout>
         {prefectures && (
           <PrefectureList 
             prefectures={prefectures.result}
@@ -101,8 +102,9 @@ const Main: React.FC = () => {
           />
         )}
         <Graph populationgraph={prefPopulation} />
-      </main>
+      </Layout>
     </>
+    
     
   );
 };
