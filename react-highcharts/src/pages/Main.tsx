@@ -45,12 +45,9 @@ const Main: React.FC = () => {
     // 選択した時
     if (click) {
       if (click_prefPop.findIndex((value) => value.prefName === prefName) !== -1){
-        console.log("失敗");
         return;
       }
       else{
-        console.log("成功");
-        console.log(prefCode);
         axios
         .get(
           "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode=" + String(prefCode),
@@ -59,7 +56,6 @@ const Main: React.FC = () => {
           }
         )
         .then((results) => {
-          console.log(results.data.result.data[0].data);
           click_prefPop.push({
             prefName: prefName,
             data: results.data.result.data[0].data
