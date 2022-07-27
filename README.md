@@ -49,7 +49,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 
-#コメント
+# コメント
 今回は株式会社ゆめみ様のフロントコーディング課題に着手させていただきました。
 Reactでの開発の経験が2ヶ月弱と浅いこともありtypescriptの記述についてもわからないことだらけで始まり、不安でしたが素晴らしい勉強の機会を与えていただき感謝しております。
 
