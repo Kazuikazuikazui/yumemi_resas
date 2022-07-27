@@ -40,6 +40,7 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
       title: {
         text: "年度",
       },
+      gridLineWidth: 1,
       min: 2,
       max: 12,
       categories: categories,
@@ -49,7 +50,7 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
         text: "人口数（万人）",
       },
       minTickInterval: 50000,
-      gridLineWidth: 2,
+      gridLineWidth: 1,
       labels: {
         formatter() {
           return `${(this.value as number) / 10000}`;
@@ -65,7 +66,10 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
 
   return (
     <>
-      <ReactHighcharts highcharts={Highcharts} options={options} />
+      <div className={styles.graph}>
+        <ReactHighcharts highcharts={Highcharts} options={options} />
+      </div>
+      
     </>
   );
 };

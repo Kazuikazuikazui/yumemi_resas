@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import Layout from '../components/Layout';
+import Title from '../components/Title';
 import PrefectureList from "../components/PrefectureList";
 import Graph from "../components/Graph";
 import axios from "axios";
@@ -95,12 +96,14 @@ const Main: React.FC = () => {
 
       </Helmet>
       <Layout>
+        <Title>都道府県選択</Title>
         {prefectures && (
           <PrefectureList 
             prefectures={prefectures.result}
             onChange={handleClick}
           />
         )}
+        <Title>人口推移グラフ</Title>
         <Graph populationgraph={prefPopulation} />
       </Layout>
     </>
