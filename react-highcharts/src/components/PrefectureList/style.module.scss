@@ -1,3 +1,136 @@
+@use '../../styles/utils' as *;
 .h3{
   background-color: #bbb;
+}
+.block {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-bottom: 50px;
+  div{
+    min-width: 108px;
+    input {
+      display: none;
+    }
+    label {
+      display: block;
+      width: 100%;
+      color: $text-black;
+      text-align: center;
+      background-color: $white;
+      border-radius: 20px;
+      padding: 5px 20px;
+      transition: .4s;
+      cursor: pointer;
+      box-shadow: 0px 2px 10px $primary-shadow;
+      @include dark{
+        color: $text-white;
+        background-color: $black;
+      }
+      
+      &:hover{
+        opacity: .8;
+      }
+      @include sp{
+        font-size: 14px;
+      }
+    }
+    &:nth-of-type(1){
+      
+      label{
+        border: 2px solid #54EFC3;
+      }
+      input:checked + label {
+        background-color: #54EFC3;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+2):nth-child(-n+7){
+      label{
+        border: 2px solid #80EBEC;
+      }
+      input:checked + label {
+        background-color: #80EBEC;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+8):nth-child(-n+14){
+      label{
+        border: 2px solid #74B8FF;
+      }
+      input:checked + label {
+        background-color: #74B8FF;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+15):nth-child(-n+23){
+      label{
+        border: 2px solid #A29AFD;
+      }
+      input:checked + label {
+        background-color: #A29AFD;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+24):nth-child(-n+30){
+      label{
+        border: 2px solid #E67296;
+      }
+      input:checked + label {
+        background-color: #E67296;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+31):nth-child(-n+35){
+      label{
+        border: 2px solid #FAB19F;
+      }
+      input:checked + label {
+        background-color: #FAB19F;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+36):nth-child(-n+39) {
+      label{
+        border: 2px solid #FF7674;
+      }
+      input:checked + label {
+        background-color: #FF7674;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    &:nth-of-type(n+40):nth-child(-n+47) {
+      label{
+        border: 2px solid #FFEAA7;
+      }
+      input:checked + label {
+        background-color: #FFEAA7;
+        @include dark{
+          color: $text-black;
+        }
+      }
+    }
+    
+  }
+}
+.label{ 
+  margin-left: "1em";
+  cursor: "pointer";
+}
+.list{
+  
 }

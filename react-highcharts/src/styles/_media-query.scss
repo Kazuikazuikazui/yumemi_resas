@@ -1,0 +1,19 @@
+$type: screen;
+
+@mixin sp($t: $type) {
+  @media #{$t} and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin over-pc($t: $type) {
+  @media #{$t} and (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin dark{
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
