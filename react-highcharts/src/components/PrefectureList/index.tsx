@@ -28,7 +28,7 @@ const PrefectureList: React.FC<Props> = ({ prefectures, onChange }) => {
               id={"checkbox" + prefecture.prefCode}
             />
             <label
-              className={styles.text}
+              className={styles.label}
               htmlFor={"checkbox" + prefecture.prefCode}
             >
               {prefecture.prefName.length === 3

@@ -35,15 +35,26 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
     title: {
       text: "総人口推移",
     },
+    
     xAxis: {
       title: {
-        text: "年",
+        text: "年度",
       },
+      gridLineWidth: 1,
+      min: 2,
+      max: 12,
       categories: categories,
     },
     yAxis: {
       title: {
-        text: "人口数",
+        text: "人口数（万人）",
+      },
+      minTickInterval: 50000,
+      gridLineWidth: 1,
+      labels: {
+        formatter() {
+          return `${(this.value as number) / 10000}`;
+        },
       },
     },
     // 都道府県を選択していない時の処理
@@ -55,7 +66,10 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
 
   return (
     <>
-      <ReactHighcharts highcharts={Highcharts} options={options} />
+      <div className={styles.graph}>
+        <ReactHighcharts highcharts={Highcharts} options={options} />
+      </div>
+      
     </>
   );
 };

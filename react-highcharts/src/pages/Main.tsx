@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import Layout from '../components/Layout';
+import Title from '../components/Title';
 import PrefectureList from "../components/PrefectureList";
 import Graph from "../components/Graph";
 import axios from "axios";
+
 
 const Main: React.FC = () => {
   
@@ -56,7 +59,6 @@ const Main: React.FC = () => {
           }
         )
         .then((results) => {
-          console.log("resultsに入れる");
           console.log(results.data.result.data[0].data);
           click_prefPop.push({
             prefName: prefName,
@@ -93,17 +95,19 @@ const Main: React.FC = () => {
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0"></meta>
 
       </Helmet>
-      <main>
-        <h2>メイン</h2>
+      <Layout>
+        <Title>都道府県選択</Title>
         {prefectures && (
           <PrefectureList 
             prefectures={prefectures.result}
             onChange={handleClick}
           />
         )}
+        <Title>人口推移グラフ</Title>
         <Graph populationgraph={prefPopulation} />
-      </main>
+      </Layout>
     </>
+    
     
   );
 };

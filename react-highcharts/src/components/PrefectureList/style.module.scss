@@ -1,22 +1,43 @@
+@use '../../styles/utils' as *;
 .h3{
   background-color: #bbb;
 }
 .block {
-  display: "flex";
-  flex-wrap: "wrap";
-  padding: "10px";
-  justify-content: "flex-start";
-  justify-self: "auto";
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  margin-bottom: 50px;
+  div{
+    min-width: 108px;
+    input {
+      display: none;
+    }
+    label {
+      display: block;
+      width: 100%;
+      color: $text-black;
+      text-align: center;
+      background-color: $white;
+      border-radius: 20px;
+      padding: 5px 20px;
+      transition: .2s;
+      &:hover{
+        opacity: .8;
+      }
+      @include sp{
+        font-size: 14px;
+      }
+    }
+    input:checked + label {
+      background-color: $accent;
+      box-shadow: inset 0 10px 15px 0 $primary-shadow;
+    }
+  }
 }
-.text{ 
-  display: "contents";
+.label{ 
   margin-left: "1em";
   cursor: "pointer";
 }
 .list{
-  border-radius: "24px";
-  border: "solid 2px";
-  text-align: "center";
-  padding: "4px";
-  margin: "0.5rem";
+  
 }
