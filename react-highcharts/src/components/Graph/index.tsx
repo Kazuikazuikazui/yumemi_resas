@@ -24,8 +24,6 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
       data.push(pd.value);
       categories.push(String(pd.year));
     }
-    
-    console.log(p.prefName);
     series.push({
       type: "line",
       name: p.prefName,
@@ -38,9 +36,6 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
   const options: Highcharts.Options = {
     title: {
       text: "総人口推移",
-    },
-    chart: {
-      renderTo: 'bigchart',
     },
     legend: {
       itemStyle: {
@@ -81,10 +76,6 @@ const Graph: React.FC<Props> = ({ populationgraph }) => {
             <span>万人</span>
           </div>`;
       },
-      shape: 'square',
-      borderWidth: 0,
-      borderRadius: 4,
-      backgroundColor: '#fff',
     },
     // 都道府県を選択していない時の処理
     series:
