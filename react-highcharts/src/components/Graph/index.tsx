@@ -2,8 +2,8 @@ import React from "react";
 import styles from './style.module.scss';
 import Highcharts from "highcharts";
 import ReactHighcharts from "highcharts-react-official";
-let minyear;
-let maxyear;
+let minyear: number;
+let maxyear: number;
 type Props = {
   populationgraph: {
     prefName: string;
