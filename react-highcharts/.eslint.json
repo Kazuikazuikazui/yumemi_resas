@@ -1,0 +1,8 @@
+"overrides": [
+  {
+      "files": ["*.js","*.jsx"],
+      "rules": {
+          "@typescript-eslint/no-empty-function": "off"
+      }
+  }
+]

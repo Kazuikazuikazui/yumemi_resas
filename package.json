@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "eslint": "^8.42.0",
     "highcharts": "^10.2.0",
     "highcharts-react-official": "^3.1.0"
   }
