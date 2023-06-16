@@ -13,14 +13,14 @@ type Props = {
 
 const Graph: React.FC<Props> = ({ populationgraph }) => {
   
-  let series: Highcharts.SeriesOptionsType[] = [];
-  let categories = [];
+  const series: Highcharts.SeriesOptionsType[] = [];
+  const categories = [];
   
 
-  for (let p of populationgraph) {
-    let data = [];
+  for (const p of populationgraph) {
+    const data = [];
 
-    for (let pd of p.data) {
+    for (const pd of p.data) {
       data.push(pd.value);
       categories.push(String(pd.year));
     }
