@@ -40,7 +40,7 @@ const Main: React.FC = () => {
     prefCode: number,
     click: boolean
   ) => {
-    let click_prefPop = prefPopulation.slice();
+    const click_prefPop = prefPopulation.slice();
 
     // 選択した時
     if (click) {
