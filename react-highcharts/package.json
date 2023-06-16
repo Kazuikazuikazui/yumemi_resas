@@ -2,6 +2,9 @@
   "name": "react-highcharts",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "lint-fix": "eslint --cache --fix src/ && prettier --write src/"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
@@ -47,6 +50,9 @@
     ]
   },
   "devDependencies": {
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "prettier": "^2.8.8",
     "sass": "^1.54.0"
   }
 }
